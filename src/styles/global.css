@@ -1,0 +1,230 @@
+/* ============================================================
+   Creative Maitri — global stylesheet
+   Brand: Maitri teal (#15B3A5) on bright white
+   Type:  Poppins, used with deliberate weight contrast
+   ============================================================ */
+
+:root {
+  --ink: #050818;
+  --ink-soft: #050818cc;
+  --ink-mute: #05081880;
+  --ink-faint: #05081820;
+  --ink-ghost: #0508180c;
+  --paper: #ffffff;
+  --paper-warm: #fafaf6;
+  --rule: #050818;
+  --teal: #15b3a5;
+  --teal-deep: #0f8278;
+  --teal-soft: #1b8182;
+  --teal-mint: #2dcbb6;
+  --teal-wash: #e6f7f4;
+  --shadow-card: 0 1px 0 #0508180a, 0 12px 30px -18px #05081830;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 18px;
+  --container: 1240px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --font: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ===== layout primitives ===== */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.rule {
+  height: 1px;
+  background: var(--ink);
+  border: 0;
+  margin: 0;
+}
+
+.rule-faint {
+  height: 1px;
+  background: var(--ink-faint);
+  border: 0;
+  margin: 0;
+}
+
+/* ===== typography ===== */
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.display {
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.display-italic {
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: -0.01em;
+}
+
+.title-serif-ish {
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.dim {
+  color: var(--ink-mute);
+}
+
+/* ===== buttons ===== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--ink);
+  border-color: var(--teal-deep);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: var(--teal-mint);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink-faint);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--teal-wash);
+  color: var(--teal-deep);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: 1px solid #c9ebe5;
+}
+
+.chip-dark {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid var(--ink-faint);
+  color: var(--ink-soft);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ===== motion primitives ===== */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.rise {
+  animation: rise 520ms cubic-bezier(.2,.65,.2,1) both;
+}
+
+@keyframes scroll-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* utilities */
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+.center { text-align: center; }
+.row { display: flex; }
+.gap-sm { gap: 8px; }
+.gap-md { gap: 16px; }
+.gap-lg { gap: 24px; }
+.wrap { flex-wrap: wrap; }
