@@ -68,11 +68,11 @@ function Hero({ count }: { count: number }) {
   return (
     <section className={styles.hero}>
       <div className="container">
-        <div className={styles.heroEyebrow}>
-          <span className="chip">
-            A gallery from
-            <img src="/maitri-logo.svg" alt="Maitri" className={styles.heroMaitriMark} />
-          </span>
+        <div className={styles.heroAttribution}>
+          <span className={styles.heroAttributionLabel}>A gallery from</span>
+          <a href="https://maitriservices.com" target="_blank" rel="noreferrer" className={styles.heroAttributionLogo}>
+            <img src="/maitri-logo.svg" alt="Maitri" />
+          </a>
         </div>
         <h1 className={`display ${styles.heroDisplay}`}>
           <span style={{ display: "block" }}>
