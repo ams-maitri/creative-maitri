@@ -79,15 +79,14 @@ function Hero({ count }: { count: number }) {
             <Wordmark />
           </span>
           <span className={styles.heroSecondLine}>
-            Where the team <em className={styles.heroEm}>expresses what it builds for itself.</em>
+            Things the team builds <em className={styles.heroEm}>when nobody asked.</em>
           </span>
         </h1>
         <div className={styles.heroMeta}>
           <p className={styles.heroLede}>
-            Creative Mondays is the slot we hold for that other half of the muscle, the part that
-            picks the problem, picks the tools, and decides what good looks like. One of us shows
-            something they made. Some weeks the slot stays empty. The point is the practice, not the
-            cadence.
+            Creative Mondays is the slot we hold for the other half of the muscle: the part that
+            picks the problem, picks the tools, and decides what good looks like. Half show-and-tell,
+            half quiet practice of taste.
           </p>
           <div className={styles.heroCount}>
             <span className={styles.heroCountValue}>{count}</span>
@@ -100,6 +99,7 @@ function Hero({ count }: { count: number }) {
 }
 
 function Marquee({ names }: { names: string[] }) {
+  // Two copies, the keyframe shifts by exactly one copy width for a seamless loop
   const repeated = [...names, ...names];
   return (
     <div className={styles.marqueeWrap} aria-hidden="true">
@@ -108,7 +108,9 @@ function Marquee({ names }: { names: string[] }) {
         <div className={styles.marqueeTrack}>
           {repeated.map((n, i) => (
             <span key={i} className={styles.marqueeItem}>
-              <span className={styles.marqueeDot} /> {n}
+              <em>{String((i % names.length) + 1).padStart(2, "0")}</em>
+              {n}
+              <span className={styles.marqueeDot} />
             </span>
           ))}
         </div>

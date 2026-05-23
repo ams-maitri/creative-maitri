@@ -102,35 +102,45 @@
 
 .marquee {
   overflow: hidden;
-  padding: 18px 0;
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  padding: 26px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 
 .marqueeTrack {
   display: inline-flex;
-  gap: 56px;
+  gap: 40px;
   white-space: nowrap;
-  animation: scroll-x 56s linear infinite;
+  animation: scroll-x 28s linear infinite;
   will-change: transform;
 }
 
 .marqueeItem {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
-  font-size: 14px;
+  gap: 14px;
+  font-size: clamp(16px, 1.4vw, 19px);
   font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: -0.005em;
   color: var(--ink);
 }
 
+.marqueeItem em {
+  font-style: italic;
+  font-weight: 100;
+  color: var(--teal-deep);
+  margin-right: 6px;
+}
+
 .marqueeDot {
-  width: 7px; height: 7px;
+  width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--teal);
   display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack { animation: none; }
 }
 
 /* ============ Grid section ============ */
