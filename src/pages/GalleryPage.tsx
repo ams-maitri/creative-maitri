@@ -15,7 +15,7 @@ export default function GalleryPage() {
         <div className="container">
           <div className={styles.gridHeader}>
             <div className="eyebrow">The catalog</div>
-            <h2 className={styles.gridTitle}>Fourteen Mondays, fourteen small obsessions.</h2>
+            <h2 className={styles.gridTitle}>Small obsessions, in chronological order.</h2>
             <p className={styles.gridLede}>Click any card to see how it works, what it is made of, and where you can find more.</p>
           </div>
           <ul className={styles.grid}>
@@ -40,7 +40,11 @@ export default function GalleryPage() {
                       </div>
                       <h3 className={styles.cardTitle}>{p.title}</h3>
                       <div className={styles.cardPresenter}>
-                        <Initials name={p.presenter} />
+                        {p.avatar ? (
+                          <img className={styles.cardAvatar} src={p.avatar} alt="" loading="lazy" />
+                        ) : (
+                          <Initials name={p.presenter} />
+                        )}
                         <span>{p.presenter}</span>
                       </div>
                     </div>
@@ -65,31 +69,30 @@ function Hero({ count }: { count: number }) {
     <section className={styles.hero}>
       <div className="container">
         <div className={styles.heroEyebrow}>
-          <span className="chip">A gallery from <strong style={{ marginLeft: 6 }}>Maitri</strong></span>
+          <span className="chip">
+            A gallery from
+            <img src="/maitri-logo.svg" alt="Maitri" className={styles.heroMaitriMark} />
+          </span>
         </div>
         <h1 className={`display ${styles.heroDisplay}`}>
           <span style={{ display: "block" }}>
             <Wordmark />
           </span>
           <span className={styles.heroSecondLine}>
-            Every Monday, someone <em className={styles.heroEm}>shows their work.</em>
+            Where the team <em className={styles.heroEm}>expresses what it builds for itself.</em>
           </span>
         </h1>
         <div className={styles.heroMeta}>
-          <div>
-            <div className="eyebrow">In the catalog</div>
-            <div className={styles.heroStat}>
-              <span className={styles.heroStatBig}>{count}</span>
-              <span className={styles.heroStatLabel}>
-                presentations<br />and counting.
-              </span>
-            </div>
-          </div>
           <p className={styles.heroLede}>
-            Creative Mondays is a weekly ritual at Maitri. One person, one thing they built that week,
-            one short demo. No briefs, no committees. Half show-and-tell, half quiet practice of taste.
-            This is the lasting record.
+            Creative Mondays is the slot we hold for that other half of the muscle, the part that
+            picks the problem, picks the tools, and decides what good looks like. One of us shows
+            something they made. Some weeks the slot stays empty. The point is the practice, not the
+            cadence.
           </p>
+          <div className={styles.heroCount}>
+            <span className={styles.heroCountValue}>{count}</span>
+            <span className={styles.heroCountLabel}>in the catalog so far</span>
+          </div>
         </div>
       </div>
     </section>
@@ -128,9 +131,9 @@ function ManifestoSection() {
           </div>
           <div className={styles.manifestoBody}>
             <p>
-              We are an agentic development company. Most of our day is spent shipping for clients.
-              Creative Mondays is for the other half of the muscle, the part that picks the problem,
-              picks the tools, and decides what good looks like.
+              We are an agentic development company. Most days are spent shipping for clients.
+              Creative Mondays is the time we hold for the other half of the muscle: the part that
+              picks the problem, picks the tools, and decides what good looks like.
             </p>
             <p>
               Some of the projects here are useful. Some are useless. All of them taught the person

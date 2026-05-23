@@ -31,16 +31,22 @@ export default function ProjectPage() {
           </Link>
 
           <div className={styles.heroEyebrow}>
-            <span className={styles.numLabel}>{String(idx + 1).padStart(2, "0")} of {all.length}</span>
+            <span className={styles.numLabel}>Entry {String(idx + 1).padStart(2, "0")}</span>
             <span className={styles.topicTag}>{p.topic}</span>
           </div>
 
           <h1 className={styles.title}>{p.title}</h1>
 
           <div className={styles.meta}>
-            <div>
+            <div className={styles.metaPresenter}>
               <div className="eyebrow">Presented by</div>
-              <div className={styles.metaValue}>{p.presenter}</div>
+              <div className={styles.presenterRow}>
+                {p.avatar && <img className={styles.presenterAvatar} src={p.avatar} alt="" />}
+                <div>
+                  <div className={styles.metaValue}>{p.presenter}</div>
+                  <a className={styles.presenterEmail} href={`mailto:${p.email}`}>{p.email}</a>
+                </div>
+              </div>
             </div>
             <div>
               <div className="eyebrow">On</div>
@@ -74,8 +80,8 @@ export default function ProjectPage() {
 
       <section className={styles.body}>
         <div className="container">
-          <div className={styles.bodyGrid}>
-            <aside className={styles.sidebar}>
+          <div className={`${styles.bodyGrid} ${p.links.length === 0 && p.documents.length === 0 ? styles.bodyGridNoSidebar : ""}`}>
+            <aside className={styles.sidebar} hidden={p.links.length === 0 && p.documents.length === 0}>
               {p.links.length > 0 && (
                 <div className={styles.sidebarBlock}>
                   <div className="eyebrow">Links</div>
@@ -106,10 +112,6 @@ export default function ProjectPage() {
                   </ul>
                 </div>
               )}
-              <div className={styles.sidebarBlock}>
-                <div className="eyebrow">Reach out</div>
-                <a className={styles.email} href={`mailto:${p.email}`}>{p.email}</a>
-              </div>
             </aside>
             <div className={styles.prose}>
               {p.description.split("\n\n").map((para, i) => (

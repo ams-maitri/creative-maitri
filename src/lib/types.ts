@@ -15,4 +15,5 @@ export type Presentation = {
   photos: string[];
   documents: Document[];
   links: string[];
+  avatar?: string;
 };

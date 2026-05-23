@@ -281,7 +281,7 @@
 }
 
 .cardPrevInitials {
-  width: 22px; height: 22px;
+  width: 26px; height: 26px;
   background: var(--ink);
   color: var(--paper);
   border-radius: 50%;
@@ -290,6 +290,14 @@
   justify-content: center;
   font-size: 10px;
   font-weight: 600;
+}
+
+.cardPrevAvatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--paper-warm);
+  border: 1px solid var(--ink-faint);
+  object-fit: cover;
 }
 
 .detailPrev {

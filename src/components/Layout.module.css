@@ -118,6 +118,20 @@
   text-decoration-color: var(--teal);
 }
 
+.footerMaitri {
+  display: inline-block;
+  margin-top: 18px;
+  opacity: 0.85;
+  transition: opacity 200ms ease;
+}
+
+.footerMaitri:hover { opacity: 1; }
+
+.footerMaitri img {
+  height: 28px;
+  width: auto;
+}
+
 .footerCols {
   display: grid;
   grid-template-columns: 1fr 1fr;

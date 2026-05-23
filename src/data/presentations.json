@@ -6,7 +6,15 @@
     "topic": "Mastering n8n",
     "title": "A fully local RAG chatbot built on n8n",
     "date": "2025-12-08",
-    "tools": ["n8n", "Docker", "Telegram webhooks", "Ollama", "Qdrant", "mxbai-embed-large", "llama3.3"],
+    "tools": [
+      "n8n",
+      "Docker",
+      "Telegram webhooks",
+      "Ollama",
+      "Qdrant",
+      "mxbai-embed-large",
+      "llama3.3"
+    ],
     "description": "An end-to-end retrieval augmented chatbot wired together in n8n, running entirely on a laptop. PDFs go in through a data ingestion workflow, get chunked and embedded with mxbai-embed-large, and land in a Qdrant vector store. A second workflow takes any question, fetches the relevant chunks, and lets llama 3.3 answer with grounded context. No cloud calls, no API keys, no recurring bills.\n\nThe talk walks through the self-hosted AI starter kit, how n8n turns each step of a RAG pipeline into a drag-and-droppable node, and where this pattern fits into Maitri's day-to-day workflow.",
     "photos": [
       "/photos/yash-shrestha-mastering-n8n-workflow-automation/photo-01.png",
@@ -16,7 +24,8 @@
     "links": [
       "https://docs.google.com/presentation/d/1K8AN39fd5sas8SX_bDI_UcN0p_4HwB8WEg-nAyrI8oM/",
       "https://n8n.io/workflows/5148-local-chatbot-with-retrieval-augmented-generation-rag/"
-    ]
+    ],
+    "avatar": "/avatars/yash-shrestha-mastering-n8n-workflow-automation.svg"
   },
   {
     "slug": "jit-bahadur-khamcha-data-formats-for-llm-applications-toon-t",
@@ -25,17 +34,24 @@
     "topic": "TOON: a token-friendly data format",
     "title": "How TOON cuts token counts against JSON, YAML and CSV",
     "date": "2025-12-15",
-    "tools": ["Python", "Claude Code"],
+    "tools": [
+      "Python",
+      "Claude Code"
+    ],
     "description": "A side-by-side comparison of four serialization formats fed to a large language model: JSON, YAML, CSV, and the newer Token-Oriented Object Notation (TOON). The same dataset is encoded in each, then tokenized, so the cost of feeding structured data to an LLM is measured rather than guessed at.\n\nThe headline: TOON ends up notably cheaper than JSON for the same payload, with no loss of structure. The session covers when that saving matters, when it doesn't, and how to slot TOON into existing prompts.",
     "photos": [
       "/photos/jit-bahadur-khamcha-data-formats-for-llm-applications-toon-t/photo-01.png"
     ],
     "documents": [
-      { "path": "/photos/jit-bahadur-khamcha-data-formats-for-llm-applications-toon-t/artifact-01.md", "label": "Presentation notes (Markdown)" }
+      {
+        "path": "/photos/jit-bahadur-khamcha-data-formats-for-llm-applications-toon-t/artifact-01.md",
+        "label": "Presentation notes (Markdown)"
+      }
     ],
     "links": [
       "https://github.com/toon-format/toon/tree/main"
-    ]
+    ],
+    "avatar": "/avatars/jit-bahadur-khamcha-data-formats-for-llm-applications-toon-t.svg"
   },
   {
     "slug": "kilesh-maharjan-react-ui-component-doc-generator",
@@ -44,7 +60,16 @@
     "topic": "React UI component doc generator",
     "title": "React Doc Gen: documentation that writes itself",
     "date": "2025-12-29",
-    "tools": ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Zustand", "Babel Parser", "React Live", "IndexedDB (Dexie)"],
+    "tools": [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Zustand",
+      "Babel Parser",
+      "React Live",
+      "IndexedDB (Dexie)"
+    ],
     "description": "A browser-only tool that turns a folder of TypeScript and TSX files into a navigable component catalog. Drop in your components, and a Babel-powered parser reads their props, types, and JSDoc comments to build pages with live previews via React Live.\n\nIt also scores how well each component is documented and suggests what to add. Everything stays client-side via IndexedDB, so there is no server to set up. Export the result as Markdown, JSON, or a zip.",
     "photos": [
       "/photos/kilesh-maharjan-react-ui-component-doc-generator/photo-01.png",
@@ -56,7 +81,8 @@
       "/photos/kilesh-maharjan-react-ui-component-doc-generator/photo-07.png"
     ],
     "documents": [],
-    "links": []
+    "links": [],
+    "avatar": "/avatars/kilesh-maharjan-react-ui-component-doc-generator.svg"
   },
   {
     "slug": "bijaya-shrestha-ai-video-generator-based-on-the-topic-given-",
@@ -65,13 +91,21 @@
     "topic": "Topic-to-video explainer",
     "title": "Type a topic, get an animated explainer video",
     "date": "2026-01-05",
-    "tools": ["OpenCode (Claude Sonnet 4.5)", "Groq", "Python", "Edge TTS", "Manim", "FFmpeg"],
+    "tools": [
+      "OpenCode (Claude Sonnet 4.5)",
+      "Groq",
+      "Python",
+      "Edge TTS",
+      "Manim",
+      "FFmpeg"
+    ],
     "description": "Give it a topic like \"explain the Pythagorean theorem,\" and roughly two minutes later it hands back a finished video. Under the hood, an LLM drafts a script, Edge TTS narrates it for free, Manim animates the visuals, and FFmpeg stitches the audio and video together.\n\nThe whole pipeline runs on free tiers and open-source libraries, which makes it useful for quick learning material without paying for a video service.",
     "photos": [
       "/photos/bijaya-shrestha-ai-video-generator-based-on-the-topic-given-/photo-01.jpeg"
     ],
     "documents": [],
-    "links": []
+    "links": [],
+    "avatar": "/avatars/bijaya-shrestha-ai-video-generator-based-on-the-topic-given-.svg"
   },
   {
     "slug": "datenji-sherpa-explainable-rag-system",
@@ -80,18 +114,39 @@
     "topic": "Explainable RAG",
     "title": "RAG you can actually inspect, with attention and LIME",
     "date": "2026-01-12",
-    "tools": ["OpenCode", "Python", "LIME", "Streamlit"],
+    "tools": [
+      "OpenCode",
+      "Python",
+      "LIME",
+      "Streamlit"
+    ],
     "description": "Most RAG systems are a black box: a question goes in, an answer comes out, and you trust the retrieval did its job. This project tears that open. It surfaces the attention weights the model used on the retrieved chunks, then runs LIME on top to explain which words in the question pulled the answer in a particular direction.\n\nIt is built as a Streamlit app, so the explanations sit right next to the answer, side by side. Useful any time the cost of a wrong answer is high enough that \"because the model said so\" is not good enough.",
-    "photos": [],
+    "photos": [
+      "/photos/datenji-sherpa-explainable-rag-system/pdf-01.png",
+      "/photos/datenji-sherpa-explainable-rag-system/pdf-02.png"
+    ],
     "documents": [
-      { "path": "/photos/datenji-sherpa-explainable-rag-system/photo-01.pdf", "label": "XAI: answer and attention explanations" },
-      { "path": "/photos/datenji-sherpa-explainable-rag-system/photo-02.pdf", "label": "Explainable RAG: LIME results" },
-      { "path": "/photos/datenji-sherpa-explainable-rag-system/photo-03.md", "label": "Presentation notes (Markdown)" },
-      { "path": "/photos/datenji-sherpa-explainable-rag-system/artifact-01.pdf", "label": "Supporting links" }
+      {
+        "path": "/photos/datenji-sherpa-explainable-rag-system/photo-01.pdf",
+        "label": "XAI: answer and attention explanations"
+      },
+      {
+        "path": "/photos/datenji-sherpa-explainable-rag-system/photo-02.pdf",
+        "label": "Explainable RAG: LIME results"
+      },
+      {
+        "path": "/photos/datenji-sherpa-explainable-rag-system/photo-03.md",
+        "label": "Presentation notes (Markdown)"
+      },
+      {
+        "path": "/photos/datenji-sherpa-explainable-rag-system/artifact-01.pdf",
+        "label": "Supporting links"
+      }
     ],
     "links": [
       "https://rag-with-scop.streamlit.app/"
-    ]
+    ],
+    "avatar": "/avatars/datenji-sherpa-explainable-rag-system.svg"
   },
   {
     "slug": "sumina-awa-data-lineage-tracker",
@@ -100,7 +155,13 @@
     "topic": "Data Lineage Tracker",
     "title": "A lineage map for the data warehouse, with a chat box",
     "date": "2026-01-19",
-    "tools": ["Python", "NetworkX", "FastAPI", "Streamlit", "Claude"],
+    "tools": [
+      "Python",
+      "NetworkX",
+      "FastAPI",
+      "Streamlit",
+      "Claude"
+    ],
     "description": "Built to answer the most expensive question in any data team: \"if I change this, what breaks?\" The tracker parses SQL, dbt models, and Python ETL scripts to construct a lineage graph automatically, no hand-drawn diagrams required. Today it maps over 1,400 nodes across the mare_data_connector dbt project.\n\nA Streamlit UI shows the graph, lets you click a node to see upstream and downstream impact, and adds a chat interface for plain-English questions like \"where does revenue come from?\" or \"rename this column and tell me what is affected.\" Risk scores call out the changes most likely to ripple.",
     "photos": [
       "/photos/sumina-awa-data-lineage-tracker/photo-01.png",
@@ -112,9 +173,13 @@
       "/photos/sumina-awa-data-lineage-tracker/photo-07.png"
     ],
     "documents": [
-      { "path": "/photos/sumina-awa-data-lineage-tracker/artifact-01.md", "label": "Data Lineage Tracker (Markdown)" }
+      {
+        "path": "/photos/sumina-awa-data-lineage-tracker/artifact-01.md",
+        "label": "Data Lineage Tracker (Markdown)"
+      }
     ],
-    "links": []
+    "links": [],
+    "avatar": "/avatars/sumina-awa-data-lineage-tracker.svg"
   },
   {
     "slug": "nabin-hyanmikha-gitstory",
@@ -123,7 +188,12 @@
     "topic": "GitStory",
     "title": "GitStory: turn commit history into a readable picture",
     "date": "2026-01-26",
-    "tools": ["Claude Code", "OpenCode", "Groq", "Python"],
+    "tools": [
+      "Claude Code",
+      "OpenCode",
+      "Groq",
+      "Python"
+    ],
     "description": "Point GitStory at a repository and it builds a visual record of who did what and when. It ranks top contributors by activity, tags each commit as a fix, feature, or chore by reading the message with an LLM, and lays the whole thing out as charts you can scroll through.\n\nThe practical use is making a quick read of a repo possible without grepping git log. It is especially handy on repos you are new to, or for end-of-quarter reviews of who shipped what.",
     "photos": [
       "/photos/nabin-hyanmikha-gitstory/photo-01.png",
@@ -136,7 +206,8 @@
       "/photos/nabin-hyanmikha-gitstory/photo-08.png"
     ],
     "documents": [],
-    "links": []
+    "links": [],
+    "avatar": "/avatars/nabin-hyanmikha-gitstory.svg"
   },
   {
     "slug": "pratik-maharjan-careflow",
@@ -145,7 +216,9 @@
     "topic": "CareFlow",
     "title": "CareFlow: the US healthcare system, walked through three doors",
     "date": "2026-02-02",
-    "tools": ["Claude Code"],
+    "tools": [
+      "Claude Code"
+    ],
     "description": "An interactive site that explains the US healthcare system by letting you live through it from three sides. Step into the Patient view to feel what insurance, claims, and bills look like as a person. Switch to the Provider view to see what a clinic touches. Then the Payer view to follow how the money moves.\n\nThe goal is intuition, not coverage of every edge case. After half an hour, the moving parts of a domain that is famously confusing start to settle into place.",
     "photos": [
       "/photos/pratik-maharjan-careflow/photo-01.png"
@@ -153,7 +226,8 @@
     "documents": [],
     "links": [
       "https://ushealthcareflow.vercel.app/"
-    ]
+    ],
+    "avatar": "/avatars/pratik-maharjan-careflow.svg"
   },
   {
     "slug": "utsav-paudel-modern-astrologer",
@@ -162,13 +236,18 @@
     "topic": "Modern Astrologer",
     "title": "A Vedic astrologer with a FastAPI brain",
     "date": "2026-02-10",
-    "tools": ["Claude Code", "FastAPI", "Claude CLI"],
+    "tools": [
+      "Claude Code",
+      "FastAPI",
+      "Claude CLI"
+    ],
     "description": "A web app that prepares a birth kundali and navamsa chart from a date, time, and place, then talks through what the planet alignments mean for you, house by house. Built as a stateless web app on top of FastAPI, with a question-and-answer side panel that runs through the Claude CLI.\n\nNot currently hosted because the QnA leans on Utsav's personal Claude access. If you are curious about a chart of your own, walk over to his desk.",
     "photos": [
       "/photos/utsav-paudel-modern-astrologer/photo-01.png"
     ],
     "documents": [],
-    "links": []
+    "links": [],
+    "avatar": "/avatars/utsav-paudel-modern-astrologer.svg"
   },
   {
     "slug": "prabin-ayadi-smartspark-s3-ai-explorer-dq-tool",
@@ -177,13 +256,26 @@
     "topic": "SmartSpark S3 AI Explorer",
     "title": "SmartSpark: a local Spark workbench for your S3 data lake",
     "date": "2026-02-16",
-    "tools": ["OpenCode", "Claude", "Groq", "PySpark", "Streamlit"],
-    "description": "A desktop-grade data workbench that points at an S3 bucket and lets you query Parquet and CSV files locally with Spark SQL, no warehouse required. Caching keeps repeated queries fast, and a built-in resource monitor watches your CPU, RAM, and disk while big queries run.\n\nA Groq-hosted Llama 3.3 sits beside the editor as a working data analyst: it writes SQL from plain questions, flags anomalies in the result set, and explains what it found. UI labels, theme colour, and even the AI's system prompt are all JSON-configurable, so a team can adapt it without touching the code.",
-    "photos": [],
-    "documents": [
-      { "path": "/photos/prabin-ayadi-smartspark-s3-ai-explorer-dq-tool/photo-01.pdf", "label": "Creative Monday deck (PDF)" }
+    "tools": [
+      "OpenCode",
+      "Claude",
+      "Groq",
+      "PySpark",
+      "Streamlit"
     ],
-    "links": []
+    "description": "A desktop-grade data workbench that points at an S3 bucket and lets you query Parquet and CSV files locally with Spark SQL, no warehouse required. Caching keeps repeated queries fast, and a built-in resource monitor watches your CPU, RAM, and disk while big queries run.\n\nA Groq-hosted Llama 3.3 sits beside the editor as a working data analyst: it writes SQL from plain questions, flags anomalies in the result set, and explains what it found. UI labels, theme colour, and even the AI's system prompt are all JSON-configurable, so a team can adapt it without touching the code.",
+    "photos": [
+      "/photos/prabin-ayadi-smartspark-s3-ai-explorer-dq-tool/photo-01.png",
+      "/photos/prabin-ayadi-smartspark-s3-ai-explorer-dq-tool/photo-02.png"
+    ],
+    "documents": [
+      {
+        "path": "/photos/prabin-ayadi-smartspark-s3-ai-explorer-dq-tool/photo-01.pdf",
+        "label": "Creative Monday deck (PDF)"
+      }
+    ],
+    "links": [],
+    "avatar": "/avatars/prabin-ayadi-smartspark-s3-ai-explorer-dq-tool.svg"
   },
   {
     "slug": "rabin-shrestha-claude-tray",
@@ -192,7 +284,12 @@
     "topic": "Claude Tray",
     "title": "Claude Tray: pixel-art popups for your agent's day",
     "date": "2026-03-30",
-    "tools": ["Claude Code", "C#", "Python", "WPF"],
+    "tools": [
+      "Claude Code",
+      "C#",
+      "Python",
+      "WPF"
+    ],
     "description": "A small Windows system tray app that turns Claude Code's background work into something you can actually feel. Whenever the agent reaches for a tool, runs into an error, or wants your attention, a tiny animated pixel-art popup slides in with a matching sound effect.\n\nIt is half observability, half companionship. You stop refreshing the terminal and start trusting that the agent will tap you on the shoulder when it needs you.",
     "photos": [
       "/photos/rabin-shrestha-claude-tray/photo-01.png",
@@ -200,7 +297,8 @@
       "/photos/rabin-shrestha-claude-tray/photo-03.png"
     ],
     "documents": [],
-    "links": []
+    "links": [],
+    "avatar": "/avatars/rabin-shrestha-claude-tray.svg"
   },
   {
     "slug": "abhiyan-khanal-claude-usage-report",
@@ -209,7 +307,10 @@
     "topic": "Claude Usage Report",
     "title": "A receipt for every Claude Code session",
     "date": "2026-04-06",
-    "tools": ["Claude Code hooks", "JavaScript"],
+    "tools": [
+      "Claude Code hooks",
+      "JavaScript"
+    ],
     "description": "A JavaScript script wired into Claude Code's hooks that collects what each session actually did: token counts, models used, tools invoked, and time spent. At the end of the day it produces a report you can scan to see where the agent's effort went.\n\nIt makes the cost and shape of agent work visible, which turns out to matter once you have several agents running for several people every day.",
     "photos": [
       "/photos/abhiyan-khanal-claude-usage-report/photo-01.png"
@@ -217,7 +318,8 @@
     "documents": [],
     "links": [
       "https://github.com/abhiyankhanal/claude-usage-report"
-    ]
+    ],
+    "avatar": "/avatars/abhiyan-khanal-claude-usage-report.svg"
   },
   {
     "slug": "barsha-kunwar-travel-itinerary-generator",
@@ -226,7 +328,19 @@
     "topic": "Travel Itinerary Generator",
     "title": "A day-by-day travel planner with real maps and real prices",
     "date": "2026-04-21",
-    "tools": ["Claude Code", "Groq (Llama 3.3 70B)", "React 19", "Vite", "Three.js", "Framer Motion", "React Leaflet", "Nominatim", "ArcGIS satellite tiles", "html2pdf.js", "Node.js"],
+    "tools": [
+      "Claude Code",
+      "Groq (Llama 3.3 70B)",
+      "React 19",
+      "Vite",
+      "Three.js",
+      "Framer Motion",
+      "React Leaflet",
+      "Nominatim",
+      "ArcGIS satellite tiles",
+      "html2pdf.js",
+      "Node.js"
+    ],
     "description": "Pick a starting point and a destination, or pick a single place to explore, and it returns a day-by-day itinerary with real place names, GPS coordinates, local currency costs, phone numbers, suitability ratings, and the kind of small tips a friend would give you. It quietly notices when a route crosses a border and switches to flight mode for you.\n\nThe map is satellite imagery from ArcGIS, place lookups go through Nominatim, and a Three.js layer holds the eye candy together. Export the finished plan as a PDF and take it on the trip.",
     "photos": [
       "/photos/barsha-kunwar-travel-itinerary-generator/photo-01.png",
@@ -235,7 +349,8 @@
     "documents": [],
     "links": [
       "https://github.com/rain1230/travel-itinerary-generator"
-    ]
+    ],
+    "avatar": "/avatars/barsha-kunwar-travel-itinerary-generator.svg"
   },
   {
     "slug": "utsav-subedi-rigohr-automation",
@@ -244,12 +359,16 @@
     "topic": "RigoHR Automation",
     "title": "Goodbye, manual check-ins",
     "date": "2026-01-29",
-    "tools": ["Claude Code", "Python"],
+    "tools": [
+      "Claude Code",
+      "Python"
+    ],
     "description": "A Python script that handles the boring half of working at Maitri: it logs into RigoHR on schedule, marks your check-in and check-out for the day, and files leave or time requests on your behalf. It is the kind of script you write once and then quietly forget exists, which is exactly the point.",
     "photos": [
       "/photos/utsav-subedi-rigohr-automation/photo-01.png"
     ],
     "documents": [],
-    "links": []
+    "links": [],
+    "avatar": "/avatars/utsav-subedi-rigohr-automation.svg"
   }
 ]

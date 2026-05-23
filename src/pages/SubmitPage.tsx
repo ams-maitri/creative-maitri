@@ -53,6 +53,10 @@ export default function SubmitPage() {
 
   const preview = useMemo<Presentation>(() => {
     const slug = slugify(`${d.presenter}-${d.topic || d.title}`) || "your-project";
+    const seed = encodeURIComponent(d.presenter || "Your name");
+    const avatar = d.presenter
+      ? `https://api.dicebear.com/9.x/notionists/svg?seed=${seed}&backgroundColor=e6f7f4,fafaf6,f0ecdf,f5e6d3&radius=50`
+      : undefined;
     return {
       slug,
       presenter: d.presenter || "Your name",
@@ -65,6 +69,7 @@ export default function SubmitPage() {
       photos: photoPreviews,
       documents: d.documents.map((f) => ({ path: `#${f.name}`, label: f.name })),
       links: parseList(d.linksRaw),
+      avatar,
     };
   }, [d, photoPreviews]);
 
@@ -129,6 +134,7 @@ export default function SubmitPage() {
       photos: photoPaths,
       documents: docPaths,
       links: parseList(d.linksRaw),
+      avatar: `/avatars/${slug}.svg`,
     };
 
     zip.file("submission.json", JSON.stringify(entry, null, 2));
@@ -259,7 +265,8 @@ export default function SubmitPage() {
 }
 
 function readmeFor(p: Presentation): string {
-  return `# Creative Maitri submission: ${p.title}\n\nDrop this zip into the repo root. It merges:\n\n- Photos and files into \`public/photos/${p.slug}/\`\n- A new entry to add to \`src/data/presentations.json\`\n\nThen open a PR.\n`;
+  const seed = encodeURIComponent(p.presenter);
+  return `# Creative Maitri submission: ${p.title}\n\nDrop this zip into the repo root. It merges:\n\n- Photos and files into \`public/photos/${p.slug}/\`\n- A new entry to add to \`src/data/presentations.json\`\n\nYou will also need an avatar at \`public/avatars/${p.slug}.svg\`. Fetch one with:\n\n\`\`\`bash\ncurl -o public/avatars/${p.slug}.svg \\\n  "https://api.dicebear.com/9.x/notionists/svg?seed=${seed}&backgroundColor=e6f7f4,fafaf6,f0ecdf,f5e6d3&radius=50"\n\`\`\`\n\nThen commit and open a PR.\n`;
 }
 
 function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
@@ -304,7 +311,11 @@ function CardPreview({ p }: { p: Presentation }) {
         </div>
         <div className={styles.cardPrevTitle}>{p.title}</div>
         <div className={styles.cardPrevPresenter}>
-          <span className={styles.cardPrevInitials}>{(p.presenter[0] || "?").toUpperCase()}</span>
+          {p.avatar ? (
+            <img src={p.avatar} alt="" className={styles.cardPrevAvatar} />
+          ) : (
+            <span className={styles.cardPrevInitials}>{(p.presenter[0] || "?").toUpperCase()}</span>
+          )}
           {p.presenter}
         </div>
       </div>

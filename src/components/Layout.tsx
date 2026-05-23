@@ -46,7 +46,10 @@ export default function Layout() {
         <div className={`container ${styles.footerInner}`}>
           <div>
             <Wordmark compact />
-            <p className={styles.footerNote}>A weekly ritual at <a href="https://maitriservices.com" target="_blank" rel="noreferrer">Maitri</a>. Every Monday, one of us shows what they built.</p>
+            <p className={styles.footerNote}>A standing slot at <a href="https://maitriservices.com" target="_blank" rel="noreferrer">Maitri</a> for the team to share what they made for themselves.</p>
+            <a href="https://maitriservices.com" target="_blank" rel="noreferrer" className={styles.footerMaitri}>
+              <img src="/maitri-logo.svg" alt="Maitri" />
+            </a>
           </div>
           <div className={styles.footerCols}>
             <div>
