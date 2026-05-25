@@ -370,5 +370,30 @@
     "documents": [],
     "links": [],
     "avatar": "/avatars/utsav-subedi-rigohr-automation.svg"
+  },
+  {
+    "slug": "saugat-regmi-ccmgr-claude-code-session-manager",
+    "presenter": "Saugat Regmi",
+    "email": "saugat.regmi@maitriservices.com",
+    "topic": "ccmgr",
+    "title": "ccmgr: a session manager for Claude Code, backed by tmux",
+    "date": "2026-05-25",
+    "tools": [
+      "Claude Code",
+      "Python",
+      "tmux",
+      "urwid"
+    ],
+    "description": "A terminal UI that puts every Claude Code session you have ever started in one list, ready to resume or kick off a new one from any project. ccmgr lives in the left pane of a tmux window; the right pane runs the session you currently care about. Switching between sessions is just arrow keys and enter.\n\nThe trick is that each Claude session runs inside its own detached tmux session, so jumping away does not interrupt a streaming response or a tool call in flight. Install with pip install ccmgr.",
+    "photos": [
+      "/photos/saugat-regmi-ccmgr-claude-code-session-manager/photo-01.png",
+      "/photos/saugat-regmi-ccmgr-claude-code-session-manager/photo-02.png"
+    ],
+    "documents": [],
+    "links": [
+      "https://pypi.org/project/ccmgr/",
+      "https://github.com/regmi-saugat/ccmgr"
+    ],
+    "avatar": "/avatars/saugat-regmi-ccmgr-claude-code-session-manager.svg"
   }
 ]
