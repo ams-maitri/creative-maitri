@@ -16,7 +16,7 @@ export default function Layout() {
       <header className={styles.header}>
         <div className={`container ${styles.headerInner}`}>
           <Link to="/" className={styles.brand} aria-label="Creative Maitri, home">
-            <span className={styles.brandMark} aria-hidden="true" />
+            <img src="/maitri-mark.svg" alt="" aria-hidden="true" className={styles.brandMark} />
             <span className={styles.brandText}>
               <Wordmark compact />
             </span>

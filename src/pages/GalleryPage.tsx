@@ -71,7 +71,8 @@ function Hero({ count }: { count: number }) {
         <div className={styles.heroAttribution}>
           <span className={styles.heroAttributionLabel}>A gallery from</span>
           <a href="https://maitriservices.com" target="_blank" rel="noreferrer" className={styles.heroAttributionLogo}>
-            <img src="/maitri-logo.svg" alt="Maitri" />
+            <img src="/maitri-mark.svg" alt="" className={styles.heroAttributionMark} aria-hidden="true" />
+            <span className={styles.heroAttributionWord}>Maitri</span>
           </a>
         </div>
         <h1 className={`display ${styles.heroDisplay}`}>
@@ -79,14 +80,13 @@ function Hero({ count }: { count: number }) {
             <Wordmark />
           </span>
           <span className={styles.heroSecondLine}>
-            Things the team builds <em className={styles.heroEm}>when nobody asked.</em>
+            Creative expression <em className={styles.heroEm}>of the team.</em>
           </span>
         </h1>
         <div className={styles.heroMeta}>
           <p className={styles.heroLede}>
-            Creative Mondays is the slot we hold for the other half of the muscle: the part that
-            picks the problem, picks the tools, and decides what good looks like. Half show-and-tell,
-            half quiet practice of taste.
+            Anyone can build anything. The only rule is that it has to be creative &mdash; and you
+            have to present it to the team. The catalog below is everything they have shown so far.
           </p>
           <div className={styles.heroCount}>
             <span className={styles.heroCountValue}>{count}</span>

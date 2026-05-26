@@ -41,14 +41,28 @@
   transform: translateY(-1px);
 }
 
-.heroAttributionLogo img {
-  height: 32px;
+.heroAttributionLogo {
+  gap: 10px;
+}
+
+.heroAttributionMark {
+  height: 28px;
   width: auto;
+  display: block;
+}
+
+.heroAttributionWord {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #11194B;
+  line-height: 1;
 }
 
 @media (max-width: 520px) {
   .heroAttribution { gap: 12px; }
-  .heroAttributionLogo img { height: 28px; }
+  .heroAttributionMark { height: 24px; }
+  .heroAttributionWord { font-size: 16px; }
 }
 
 .heroDisplay {
